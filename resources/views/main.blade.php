@@ -37,7 +37,7 @@ The alpine.js code is *NOT* production ready and is included to preview
                     </svg>
                 </a>
             </div>
-             <div id="goods-container">
+            <div id="goods-container">
                 @include('goods.goods-content', ['goods/category=1' => $goods])
             </div>
             <!-- <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
