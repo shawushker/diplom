@@ -18,8 +18,10 @@ class CartController extends Controller
 
         $cart = Cart::firstOrCreate([
             'user_id' => Auth::id(),
-            'good_id' => $id,
-        ]);
+            'good_id' => $id,],
+        [
+        'quantity' => 0, // Установите начальное значение количества товаров здесь
+        ]);;
 
         $cart->increment('quantity');
         return redirect()->back()->with('success', 'Товар добавлен в корзину.');
