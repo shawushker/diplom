@@ -9,6 +9,10 @@
             @csrf
             @method('PUT')
             <div class="mb-4">
+                <label for="address" class="block mb-2">Имя</label>
+                <input type="text" id="address" name="address" value="{{ $user->name }}" class="w-full px-3 py-2 border rounded">
+            </div>
+            <div class="mb-4">
                 <label for="address" class="block mb-2">Адрес</label>
                 <input type="text" id="address" name="address" value="{{ $user->address }}" class="w-full px-3 py-2 border rounded">
             </div>

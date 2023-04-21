@@ -9,7 +9,7 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4">
+       <!-- <div class="grid md:grid-cols-2 lg:grid-cols-4">
             <div class="mb-6">
                <h5 class="mb-2.5 font-bold uppercase">Links</h5>
 
@@ -85,7 +85,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> <-->
         <div
             class="p-4 text-center"
             style="background-color: rgba(0, 0, 0, 0.2)">
