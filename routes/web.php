@@ -34,5 +34,15 @@ Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('r
 Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+
+    Route::resource('goods', 'App\Http\Controllers\GoodController');
+    Route::resource('categories', 'App\Http\Controllers\CategoryController');
+    Route::resource('orders', 'OrderController');
+    Route::resource('users', 'App\Http\Controllers\UserController');
+});
 
 

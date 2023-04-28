@@ -1,35 +1,75 @@
 @extends('layouts.app')
 @section('title', 'Главная страница')
 @section('content')
-    @include('partials.header')
-
-    @foreach($goods as $good)
-        <div class="shadow-lg rounded lg">
-            <a href="#">
-                <img src="{{ $good->images->first()->path }}" class="rounded-tl-lg rounded-tr-lg" />
-            </a>
-            <div class="p-5">
-                <div class="flex justify-between">
-                    <h3><a href="#">{{ $good->title }}</a></h3>
-                    <h3><a href="#">{{ $good->price }}р</a></h3>
-                </div>
-                <div class="flex flex-col xl:flex-row justify-between my-3">
-                    <a href="#" class="bg-gradient-to-r from-red-600 to-pink-500 rounded-full py-2 px-4 text-gray-50 flex flex-row justify-center my-2 hover:from-pink-600 to-pink-700 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                        </svg>
-                        В корзину
-                    </a>
-                    <a href="#" class="bg-purple-600 rounded-full py-2 px-4 text-gray-50 flex flex-row justify-center my-2 hover:bg-purple-700 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                        </svg>
-                        Подробнее
-                    </a>
-                </div>
+<body class="min-h-screen bg-gray-100">
+<header class="bg-white shadow">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="flex items-center justify-between">
+            <div>
+                <a href="#" class="text-2xl font-bold text-gray-800">Кондитерская</a>
+            </div>
+            <div>
+                <a href="#" class="text-gray-800">О нас</a>
+                <a href="#" class="ml-6 text-gray-800">Товары</a>
+                <a href="#" class="ml-6 text-gray-800">Контакты</a>
             </div>
         </div>
-    @endforeach
+    </nav>
+</header>
 
-    @include('partials.footer')
-    @endsection
+<section class="bg-cover bg-center h-auto text-white py-24 px-6" style="background-image: url('https://placehold.co/600x400')">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold mb-5">Добро пожаловать в нашу кондитерскую!</h2>
+        <p class="mb-8">Вкуснейшие сладости для каждого!</p>
+    </div>
+</section>
+
+<section class="container mx-auto px-6 py-12">
+    <h2 class="text-4xl font-bold mb-8">Наши товары</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Карточка товара -->
+        <div class="bg-white rounded shadow p-6">
+            <img src="https://placehold.co/600x400" alt="Товар" class="w-full mb-4">
+            <h3 class="text-xl font-bold">Название товара</h3>
+            <p class="text-gray-700">Описание товара</p>
+        </div>
+        <!-- ... -->
+    </div>
+</section>
+
+<section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between">
+            <div class="text-center sm:text-left">
+                <h2 class="text-4xl font-bold">Об создателе</h2>
+                <p class="mt-4">Информация о создателе и его истории.</p>
+            </div>
+            <img src="https://placehold.co/600x400" alt="Создатель" class="rounded-full w-32 h-32 object-cover">
+        </div>
+    </div>
+</section>
+<section class="container mx-auto px-6 py-12">
+    <div class="bg-cover bg-center h-96" style="background-image: url('https://placehold.co/600x400')"></div>
+</section>
+
+<footer class="bg-white shadow">
+    <div class="container mx-auto px-6 py-6">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-gray-800">Кондитерская</a>
+            </div>
+            <div>
+                <a href="#" class="text-gray-800">О нас</a>
+                <a href="#" class="ml-6 text-gray-800">Товары</a>
+                <a href="#" class="ml-6 text-gray-800">Контакты</a>
+            </div>
+            <div>
+                <p class="text-gray-800">© 2023 Кондитерская. Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+
+@endsection
