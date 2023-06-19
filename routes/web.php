@@ -1,10 +1,12 @@
 <?php
-
+use App\Http\Controllers\GoodController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 /*
+ *
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -18,6 +20,10 @@ Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('h
 Route::get('/categories', [App\Http\Controllers\IndexController::class, 'categories'])->name('categories');
 Route::get('/goods', [App\Http\Controllers\GoodController::class, 'index'])->name('goods');
 Route::get('/goods/{good}', 'App\Http\Controllers\GoodController@show')->name('goods.show');
+Route::resource('orders', OrderController::class);
+Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+Route::get('/order/{order}', [OrderController::class, 'show'])->name('order.show');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
@@ -33,16 +39,5 @@ Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
-
-    Route::resource('goods', 'App\Http\Controllers\GoodController');
-    Route::resource('categories', 'App\Http\Controllers\CategoryController');
-    Route::resource('orders', 'OrderController');
-    Route::resource('users', 'App\Http\Controllers\UserController');
-});
 
 

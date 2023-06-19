@@ -14,10 +14,14 @@ class Order extends Model
         'quantity',
         'status',
     ];
-    public function good(){
-        return $this->belongsTo(Good::class);
-    }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
+
+    public function goods()
+    {
+        return $this->belongsToMany(Good::class)->withPivot('quantity');
+    }
+
 }

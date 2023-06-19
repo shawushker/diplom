@@ -13,7 +13,7 @@ class Good extends Model
         'description',
         'price',
         'quantity',
-        'category',
+        'category_id',
     ];
     public function category(){
         return $this->belongsTo(Category::class);
@@ -23,6 +23,7 @@ class Good extends Model
     }
     public function images(){
        # return $this->hasMany(Image::class)->orderBy("source");
-        return $this->hasMany(Image::class);
+       # return $this->hasMany(Image::class);
+        return $this->hasMany('App\Models\Image', 'good_id', 'id');
     }
 }

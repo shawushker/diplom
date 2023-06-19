@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/storage/items/logo.png" type="image/png">
 
 </head>
-<body class="bg-white dark:bg-gray-900">
+<body class="bg-white dark:bg-gray-900 min-h-screen flex flex-col">
 <script src="//unpkg.com/alpinejs" defer></script>
 @yield('content')
 <script src="{{ asset('/js/app.js') }}" type="text/javascript" defer></script>

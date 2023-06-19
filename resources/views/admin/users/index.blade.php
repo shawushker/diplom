@@ -12,7 +12,7 @@
                     <label for="name" class="block">Имя</label>
                     <input type="text" class="block w-full border border-gray-300 p-2" id="name" name="name" required>
                 </div>
-                <!-- Добавьте остальные поля, как в предыдущем примере -->
+
 
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Добавить пользователя</button>
             </form>

@@ -13,13 +13,14 @@ class Image extends Model
         'good_id',
 
     ];
-   # public function good(){
-      #  return $this->belongsTo(Good::class);
-      #  return $this->belongsTo(Good::class);
-    #}
+
     public function goods()
     {
         return $this->belongsTo(Good::class);
+    }
+    public function good()
+    {
+        return $this->belongsTo('App\Models\Good', 'good_id', 'id');
     }
 
 }

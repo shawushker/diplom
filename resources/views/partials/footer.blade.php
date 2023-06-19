@@ -1,4 +1,4 @@
-<footer class="bg-neutral-900 text-center text-white relative left-0 bottom-0 w-full ">
+<footer class="bg-neutral-900 text-center text-white relative left-0 bottom-0 w-full mt-auto ">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
     <div class="container px-6 pt-6">
 

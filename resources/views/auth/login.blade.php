@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.header')
 
-    <div class="container mx-auto p-5">
+    <div class="container mx-auto p-5 ">
         <h2 class="text-2xl mb-6">Вход</h2>
         <form action="{{ route('login') }}" method="POST" class="w-full max-w-md">
             @csrf
