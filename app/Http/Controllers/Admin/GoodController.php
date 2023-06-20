@@ -50,7 +50,7 @@ class GoodController extends Controller
         $image->good_id = $good->id; // Присваиваем ID товара, к которому относится изображение
         $image->save(); // Сохраняем новое изображение
 
-        return redirect()->route('goods.index')->with('success', 'Товар успешно добавлен.');
+        return redirect()->route('admin.goods.index')->with('success', 'Товар успешно добавлен.');
     }
 
     public function edit(Good $good)
@@ -94,14 +94,14 @@ class GoodController extends Controller
             $image->save();
         }
 
-        return redirect()->route('goods.index')->with('success', 'Товар успешно обновлен.');
+        return redirect()->route('admin.goods.index')->with('success', 'Товар успешно обновлен.');
     }
 
 
     public function destroy(Good $good)
     {
         $good->delete();
-        return redirect()->route('goods.index')->with('success', 'Товар успешно удален.');
+        return redirect()->route('admin.goods.index')->with('success', 'Товар успешно удален.');
     }
 }
 

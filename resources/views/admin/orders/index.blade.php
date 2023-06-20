@@ -1,41 +1,63 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto px-4">
-        <h1 class="text-2xl mb-6">Orders</h1>
-
-        <div class="mb-6">
-            <h2 class="text-xl mb-4">Add new order</h2>
-            <form action="{{ route('orders.store') }}" method="post">
-                @csrf
-                <!-- Add input fields for order fields -->
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add order</button>
-            </form>
+    <div class="container mx-auto px-4 mt-6">
+        <div class="flex justify-between">
+            <h1 class="text-2xl font-bold">Заказы</h1>
+            <a href="{{ route('admin.orders.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Создать заказ
+            </a>
         </div>
 
-        <h2 class="text-xl mb-4">Orders list</h2>
-        <table class="table-auto w-full mb-6">
-            <thead>
-            <tr>
-                <!-- Add table headers for order fields -->
-                <th class="border p-2">Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($orders as $order)
-                <tr>
-                    <!-- Add table data for order fields -->
-                    <td class="border p-2">
-                        <a href="{{ route('orders.edit', $order->id) }}" class="bg-yellow-500 text-white px-2 py-1 rounded">Edit</a>
-                        <form action="{{ route('orders.destroy', $order->id) }}" method="post" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+        <div class="mt-8">
+            <div class="flex flex-col">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User ID</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Действия</th>
+                                </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                @foreach($orders as $order)
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ $order->id }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ $order->user_id }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ $order->total }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            {{ $order->status }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <a href="{{ route('admin.orders.edit', $order->id) }}" class="text-blue-600 hover:text-blue-900">Редактировать</a>
+                                            <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" class="inline-block">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('Вы уверены, что хотите удалить этот заказ?')">Удалить</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+
+        </div>
+    </div>
     </div>
 @endsection

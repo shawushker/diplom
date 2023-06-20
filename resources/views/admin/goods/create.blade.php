@@ -4,7 +4,7 @@
     <div class="container mx-auto mt-5">
         <h1 class="text-xl mb-5">Добавление товара</h1>
 
-        <form action="{{ route('goods.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.goods.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
                 <label for="title" class="block mb-2">Название товара</label>

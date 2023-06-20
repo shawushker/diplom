@@ -25,7 +25,7 @@ class CategoryController extends Controller
         ]);
 
         Category::create($request->all());
-        return redirect()->route('categories.index')->with('success', 'Категория успешно добавлена.');
+        return redirect()->route('admin.categories.index')->with('success', 'Категория успешно добавлена.');
     }
 
     public function edit(Category $category)
@@ -40,12 +40,12 @@ class CategoryController extends Controller
         ]);
 
         $category->update($request->all());
-        return redirect()->route('categories.index')->with('success', 'Категория успешно обновлена.');
+        return redirect()->route('admin.categories.index')->with('success', 'Категория успешно обновлена.');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index')->with('success', 'Категория успешно удалена.');
+        return redirect()->route('admin.categories.index')->with('success', 'Категория успешно удалена.');
     }
 }

@@ -9,7 +9,6 @@
                     class="aspect-square w-full rounded-xl object-cover"
                 />
             </div>
-
             <div class="sticky top-0">
                 <div class="mt-8 flex justify-between">
                     <div class="max-w-[35ch] space-y-2">
@@ -85,146 +84,21 @@
                         </p>
                     </div>
                 </div>
-
-                <form class="mt-8">
-                    <fieldset>
-                        <legend class="mb-1 text-sm font-medium">Начинка</legend>
-
-                        <div class="flex flex-wrap gap-1">
-                            <label for="color_tt" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="color"
-                                    id="color_tt"
-                                    class="peer sr-only"/>
-                                <span
-                                    class="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white">
-                  Вишневый
-                </span>
-                            </label>
-
-                            <label for="color_fr" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="color"
-                                    id="color_fr"
-                                    class="peer sr-only"
-                                />
-
-                                <span
-                                    class="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white"
-                                >
-                  Ванильный
-                </span>
-                            </label>
-
-                            <label for="color_cb" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="color"
-                                    id="color_cb"
-                                    class="peer sr-only"
-                                />
-
-                                <span
-                                    class="group inline-block rounded-full border px-3 py-1 text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white"
-                                >
-                  Шоколадный
-                </span>
-                            </label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="mt-4">
-                        <legend class="mb-1 text-sm font-medium">Размер</legend>
-
-                        <div class="flex flex-wrap gap-1">
-                            <label for="size_xs" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="size"
-                                    id="size_xs"
-                                    class="peer sr-only"
-                                />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white"
-                                >
-                  500г
-                </span>
-                            </label>
-
-                            <label for="size_s" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="size"
-                                    id="size_s"
-                                    class="peer sr-only"
-                                />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white"
-                                >
-                  1кг
-                </span>
-                            </label>
-
-                            <label for="size_m" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="size"
-                                    id="size_m"
-                                    class="peer sr-only"
-                                />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white"
-                                >
-                  1.5кг
-                </span>
-                            </label>
-
-                            <label for="size_l" class="cursor-pointer">
-                                <input
-                                    type="radio"
-                                    name="size"
-                                    id="size_l"
-                                    class="peer sr-only"
-                                />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-pink-400 peer-checked:text-white"
-                                >
-                  2кг
-                </span>
-                            </label>
-
-                        </div>
-                    </fieldset>
-
-                    <div class="mt-8 flex gap-4">
+                <div class="mt-8 flex gap-4">
+                    <form action="{{ route('cart.add', $good->id) }}" method="POST">
+                        @csrf
                         <div>
-                            <label for="quantity" class="sr-only">Qty</label>
-
-                            <input
-                                type="number"
-                                id="quantity"
-                                min="1"
-                                value="1"
-                                class="w-12 rounded border-gray-200 py-3 text-center text-xs [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
-                            />
+                            <label for="quantity" class="sr-only">Количество</label>
+                            <input type="number" name="quantity" id="quantity" min="1" value="1" class="w-12 rounded border-gray-200 py-3 text-center text-xs [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"/>
                         </div>
 
-                        <button
-                            type="submit"
-                            class="block rounded bg-pink-500 px-5 py-3 text-xs font-medium text-white hover:bg-pink-400"
-                        >
+                        <button type="submit" class="block rounded bg-pink-500 px-5 py-3 text-xs font-medium text-white hover:bg-pink-400">
                             Добавить в корзину
                         </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+    </div>
     </div>
 </section>
 @include('partials.footer')

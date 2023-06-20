@@ -25,7 +25,11 @@
                 <input type="password" id="password_confirmation" name="password_confirmation" class="w-full px-3 py-2 border rounded required">
             </div>
             <button type="submit" class="w-full px-3 py-2 border rounded">Сохранить изменения</button>
-
+            @if (Auth::user()->role === 'admin')
+                <a href="{{ route('admin.dashboard') }}" class="w-full px-3 py-2 border rounded mt-3 block text-center bg-blue-500 text-white">
+                    Админ-панель
+                </a>
+            @endif
         </form>
     </div>
 @include('partials.footer')

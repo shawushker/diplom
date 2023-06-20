@@ -28,12 +28,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('cart.add');
     Route::post('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    Route::post('/cart/increment/{id}', [App\Http\Controllers\CartController::class, 'incrementQuantity'])->name('cart.increment');
+    Route::post('/cart/decrement/{id}', [App\Http\Controllers\CartController::class, 'decrementQuantity'])->name('cart.decrement');
+
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 });
 
-
+Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout');
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');

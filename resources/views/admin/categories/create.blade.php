@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4">
         <h2 class="text-lg font-medium mb-4">Добавить категорию</h2>
 
-        <form action="{{ route('categories.store') }}" method="POST" class="w-full max-w-sm mx-auto">
+        <form action="{{ route('admin.categories.store') }}" method="POST" class="w-full max-w-sm mx-auto">
             @csrf
 
             <div class="mb-4">

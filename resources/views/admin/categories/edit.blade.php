@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4">
         <h2 class="text-lg font-medium mb-4">Редактировать категорию</h2>
 
-        <form action="{{ route('categories.update', $category->id) }}" method="POST" class="w-full max-w-sm mx-auto">
+        <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" class="w-full max-w-sm mx-auto">
             @csrf
             @method('PUT')
 

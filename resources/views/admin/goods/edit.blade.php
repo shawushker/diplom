@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mx-auto mt-5">
         <h1 class="text-xl mb-5">Редактирование товара</h1>
-        <form action="{{ route('goods.update', $good->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.goods.update', $good->id) }}" method="post" enctype="multipart/form-data">
         @csrf
             @method('PUT')
             <div class="mb-4">

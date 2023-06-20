@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4">
         <h1 class="text-2xl mb-6">Редактировать пользователя: {{ $user->name }}</h1>
 
-        <form action="{{ route('users.update', $user->id) }}" method="post">
+        <form action="{{ route('admin.users.update', $user->id) }}" method="post">
             @csrf
             @method('PUT')
             <div class="mb-3">

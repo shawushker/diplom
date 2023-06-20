@@ -6,7 +6,7 @@
 
         <div class="mb-6">
             <h2 class="text-xl mb-4">Добавить нового пользователя</h2>
-            <form action="{{ route('users.store') }}" method="post">
+            <form action="{{ route('admin.users.store') }}" method="post">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="block">Имя</label>
@@ -35,8 +35,8 @@
                     <td class="border p-2">{{ $user->name }}</td>
                     <!-- Значения для остальных полей -->
                     <td class="border p-2">
-                        <a href="{{ route('users.edit', $user->id) }}" class="bg-yellow-500 text-white px-2 py-1 rounded">Редактировать</a>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="post" class="inline">
+                        <a href="{{ route('admin.users.edit', $user->id) }}" class="bg-yellow-500 text-white px-2 py-1 rounded">Редактировать</a>
+                        <form action="{{ route('admin.users.destroy', $user->id) }}" method="post" class="inline">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">Удалить</button>

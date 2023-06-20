@@ -31,7 +31,7 @@ class UserController extends Controller
 
         // Хэшируйте пароль перед сохранением
         $user->update(array_merge($request->all(), ['password' => bcrypt($request->password)]));
-        return redirect()->route('users.index')->with('success', 'Пользователь успешно обновлен.');
+        return redirect()->route('admin.users.index')->with('success', 'Пользователь успешно обновлен.');
     }
 
     public function store(Request $request)
@@ -42,7 +42,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index')->with('success', 'Пользователь успешно удален.');
+        return redirect()->route('admin.users.index')->with('success', 'Пользователь успешно удален.');
     }
 }
 
