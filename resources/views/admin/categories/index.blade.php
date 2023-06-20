@@ -4,9 +4,9 @@
     <div class="container mx-auto px-4">
         <h2 class="text-lg font-medium mb-4">Категории</h2>
 
-        <a href="{{ route('admin.categories.create') }}" class="bg-green-500 text-white px-4 py-2 rounded mb-4">Добавить категорию</a>
+        <a href="{{ route('admin.categories.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Добавить категорию</a>
 
-        <table class="table-fixed w-full">
+        <table class="table-fixed w-full mt-6 mb-6">
             <thead>
             <tr>
                 <th class="border px-4 py-2 w-12">ID</th>
@@ -31,6 +31,7 @@
             @endforeach
             </tbody>
         </table>
+        <a href="{{ route('admin.dashboard')}}" class="bg-blue-500 text-white px-4 py-2 rounded mt-5">Назад</a>
 
     </div>
 @endsection

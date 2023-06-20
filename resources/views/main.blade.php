@@ -2,18 +2,6 @@
 @section('title', 'Главная страница')
 @section('content')
     @include('partials.header')
-<!--
-  This example requires Tailwind CSS v2.0+
-
-The alpine.js code is *NOT* production ready and is included to preview
-  possible interactivity
--->
-<!--
-  This example requires Tailwind CSS v2.0+
-
-  The alpine.js code is *NOT* production ready and is included to preview
-  possible interactivity
--->
 <!-- Hero Section -->
     <div class="container mx-auto p-5">
         <div class="md:flex md:flex-row mt-20 px-40">
@@ -22,7 +10,7 @@ The alpine.js code is *NOT* production ready and is included to preview
                 <p class="mt-2 text-gray-600 tracking-wide text-center md:self-start md:text-left">Забудьте о суете и окунитесь в атмосферу изысканных вкусов и ароматов нашей уникальной кондитерской. Мы создаем потрясающие десерты, которые не только радуют глаз, но и невероятно вкусны. Предлагаем вам попробовать самые лучшие торты, пирожные и шоколадные изделия, приготовленные с любовью и мастерством.Приходите к нам и окунитесь в мир сладостей, где каждое лакомство - это произведение искусства. Ваше воображение будет поражено разнообразием ассортимента и качеством наших изделий. Зовите своих друзей и близких, чтобы вместе насладиться незабываемыми впечатлениями.</p>
                 <a href="/goods" class="bg-gradient-to-r from-red-600 to-pink-500 rounded-full py-4 px-8 text-gray-50 uppercase text-xl md:self-start my-5">КУПИТЬ СЕЙЧАС</a>
             </div>
-            <div class="md:w-2/5">
+            <div class="md:w-2/5 hidden md:block">
                 <img src="././images/cake1.svg" class="w-full">
             </div>
         </div> <!-- Hero Section -->

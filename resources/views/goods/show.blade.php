@@ -1,6 +1,8 @@
 @extends('layouts.app')
-<section>
+@section('title', 'Товар')
+
     @include('partials.header')
+<section>
     <div class="relative mx-auto max-w-screen-xl px-4 py-8">
         <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
             <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
@@ -101,4 +103,5 @@
     </div>
     </div>
 </section>
+
 @include('partials.footer')

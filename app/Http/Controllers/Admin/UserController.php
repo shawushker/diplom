@@ -38,6 +38,8 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);}
     public function destroy(User $user)
     {

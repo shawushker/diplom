@@ -46,6 +46,10 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('Вы уверены, что хотите удалить этот заказ?')">Удалить</button>
                                             </form>
+                                            <div>
+                                                <!-- Информация о заказе -->
+                                                <a href="{{ route('orders.show', $order->id) }}" class="btn btn-primary">Подробнее</a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -55,9 +59,14 @@
                     </div>
                 </div>
             </div>
+            @foreach ($orders as $order)
+
+            @endforeach
+
             <div class="mt-4">
 
         </div>
     </div>
+        <a href="{{ route('admin.dashboard')}}" class="bg-blue-500 text-white px-4 py-2 rounded">Назад</a>
     </div>
 @endsection

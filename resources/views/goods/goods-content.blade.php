@@ -1,6 +1,5 @@
-<div class="container mx-auto p-5">
+<div class="container mx-auto p-4">
     <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-        <!--<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">!-->
 
     @foreach ($goods as $good)
         <form action="{{ route('cart.add', $good->id) }}" method="post" class="shadow-lg rounded lg" >
