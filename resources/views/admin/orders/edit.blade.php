@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Изменение заказа')
 @section('content')
     <div class="container mx-auto px-4 mt-6">
         <h1 class="text-2xl font-bold mb-6">Редактировать заказ</h1>

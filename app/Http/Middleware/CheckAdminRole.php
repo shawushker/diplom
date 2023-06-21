@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Illuminate\Support\Facades\Auth;
 class CheckAdminRole
 {
     /**
@@ -15,11 +15,17 @@ class CheckAdminRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->check() && auth()->user()->role !== 'admin') {
-            return redirect()->route('home')->with('error', 'У вас нет доступа к этому разделу.');
-        }
+        {
+            if (!Auth::check()) {
+                return redirect('login');
+            }
 
-        return $next($request);
+            if (Auth::user()->role != 'admin') {
+                return redirect('home');
+            }
+
+            return $next($request);
+        }
     }
 
 

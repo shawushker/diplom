@@ -9,19 +9,19 @@
             @csrf
             @method('PUT')
             <div class="mb-4">
-                <label for="address" class="block mb-2">Имя</label>
-                <input type="text" id="address" name="address" value="{{ $user->name }}" class="w-full px-3 py-2 border rounded">
+                <label for="name" class="block mb-2">Имя</label>
+                <input type="text" id="name" name="name" value="{{ $user->name }}" class="w-full px-3 py-2 border rounded">
             </div>
             <div class="mb-4">
                 <label for="address" class="block mb-2">Адрес</label>
                 <input type="text" id="address" name="address" value="{{ $user->address }}" class="w-full px-3 py-2 border rounded">
             </div>
             <div class="mb-4">
-                <label for="password" class="block mb-2">Новый пароль</label>
+                <label for="password" class="block mb-2">Введите пароль *</label>
                 <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded required">
             </div>
             <div class="mb-4">
-                <label for="password_confirmation" class="block mb-2">Подтверждение пароля</label>
+                <label for="password_confirmation" class="block mb-2">Подтверждение пароля *</label>
                 <input type="password" id="password_confirmation" name="password_confirmation" class="w-full px-3 py-2 border rounded required">
             </div>
             <button type="submit" class="w-full px-3 py-2 border rounded">Сохранить изменения</button>

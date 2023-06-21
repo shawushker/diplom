@@ -17,10 +17,11 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
             'password' => 'required|confirmed|min:8',
             'address' => 'required|string|max:255',
         ]);
-
+        $user->name = $validatedData['name'];
         $user->password = Hash::make($validatedData['password']);
         $user->address = $validatedData['address'];
         $user->save();

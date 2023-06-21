@@ -5,22 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Good;
+use App\Models\Category;
 
 class GoodController extends Controller
 {
-
-        public function index(Request $request)
+    public function index()
     {
-        $category = $request->get('category');
         $query = Good::query();
 
-        if ($category) {
-            $query->where('category', $category);
+        if ($categoryId = request('category')) {
+            $query->where('category_id', $categoryId);
         }
 
-        $goods = $query->orderBy('id', 'DESC')->paginate(8);
-        return view('goods.index', compact('goods'));
+        $goods = $query->paginate(8);
+        $categories = Category::all(); //
+
+        return view('goods.index', compact('goods', 'categories'));
     }
+
     public function show($id)
     {
         $good = Good::findOrFail($id);

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Добавление товара')
 @section('content')
     <div class="container mx-auto mt-5">
         <h1 class="text-xl mb-5">Добавление товара</h1>

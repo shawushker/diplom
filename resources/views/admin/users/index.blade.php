@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Таблица пользователи')
 @section('content')
     <div class="container mx-auto px-4">
         <h1 class="text-2xl mb-6">Пользователи</h1>

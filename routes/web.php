@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
+
 /*
  *
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\OrderController;
 */
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('home');
 Route::get('/categories', [App\Http\Controllers\IndexController::class, 'categories'])->name('categories');
-Route::get('/goods', [App\Http\Controllers\GoodController::class, 'index'])->name('goods');
+Route::get('/goods', [GoodController::class, 'index'])->name('goods.index');
 Route::get('/aboutus', [App\Http\Controllers\Aboutus::class, 'index'])->name('aboutus');
 Route::get('/goods/{good}', 'App\Http\Controllers\GoodController@show')->name('goods.show');
 Route::resource('orders', OrderController::class);

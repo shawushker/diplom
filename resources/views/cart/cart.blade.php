@@ -9,18 +9,20 @@
             <div class="grid grid-cols-1 gap-4">
                 @foreach ($carts as $cart)
                     <div class="shadow-lg rounded">
-                        <div class="p-5 flex justify-between items-center">
-                            <div>
+                        <div class="p-5 flex justify-between items-start">
+                            <div class="flex">
                                 <img src="{{ asset('storage/goods/images/' . $cart->good->images->first()->path) }}"
-                                     class="h-12 w-12 object-cover rounded"
+                                     class="h-12 w-12 object-cover rounded mr-4"
                                 />
-                                <h3>{{ $cart->good->title }}</h3>
-                                <p>{{ $cart->good->price }}р</p>
+                                <div>
+                                    <h3 class="font-bold">{{ $cart->good->title }}</h3>
+                                    <p class="text-blue-600">{{ $cart->good->price }}р</p>
+                                </div>
                             </div>
-                            <div>
+                            <div class="flex items-center">
                                 <button
                                     onclick="event.preventDefault(); document.getElementById('increment-{{ $cart->good->id }}').submit();"
-                                    class="px-2 py-1 bg-green-500 text-white rounded"
+                                    class="px-2 py-1 bg-green-500 text-white rounded-full shadow-md hover:bg-green-600"
                                 >
                                     +
                                 </button>
@@ -29,7 +31,7 @@
 
                                 <button
                                     onclick="event.preventDefault(); document.getElementById('decrement-{{ $cart->good->id }}').submit();"
-                                    class="px-2 py-1 bg-yellow-500 text-white rounded"
+                                    class="px-2 py-1 bg-yellow-500 text-white rounded-full shadow-md hover:bg-yellow-600"
                                 >
                                     -
                                 </button>
@@ -45,7 +47,7 @@
                             <div>
                                 <form action="{{ route('cart.remove', $cart->good->id) }}" method="post">
                                     @csrf
-                                    <button type="submit" class="bg-red-500 text-white rounded-full py-2 px-4 hover:bg-red-600">Удалить</button>
+                                    <button type="submit" class="bg-red-500 text-white rounded-full py-2 px-4 hover:bg-red-600 shadow-md">Удалить</button>
                                 </form>
                             </div>
                         </div>
@@ -54,9 +56,9 @@
             </div>
             <div class="mt-8">
                 <p class="text-xl font-bold mb-4">Итого: {{ $total }}р</p>
-                <<form action="{{ route('checkout') }}" method="post">
+                <form action="{{ route('checkout') }}" method="post">
                     @csrf
-                    <button type="submit" class="bg-blue-500 text-white rounded-full py-2 px-4 hover:bg-blue-600">Оплатить</button>
+                    <button type="submit" class="bg-blue-500 text-white rounded-full py-2 px-4 hover:bg-blue-600 shadow-md">Оплатить</button>
                 </form>
             </div>
         @else

@@ -89,11 +89,11 @@ class GoodController extends Controller
             $request->image->move(public_path('storage/goods/images'), $imageName);
 
             $image = new Image();
-            $image->path = "/images/".$imageName;
+            $image->path = $imageName;
             $image->good_id = $good->id;
             $image->save();
         }
-
+        $good ->save();
         return redirect()->route('admin.goods.index')->with('success', 'Товар успешно обновлен.');
     }
 

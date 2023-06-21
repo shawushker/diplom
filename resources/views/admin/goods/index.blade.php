@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Таблица товары')
 @section('content')
     <div class="container mx-auto px-2 mt-6">
         <div class="flex justify-between">

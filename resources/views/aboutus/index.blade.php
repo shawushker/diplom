@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Главная страница')
+@section('title', 'О нас')
 @section('content')
     @include('partials.header')
     <div class="py-20 bg-gray-50">

@@ -7,7 +7,7 @@
         <div class="md:flex md:flex-row mt-20 px-40">
             <div class="md:w-4/5 flex flex-col justify-center items-center">
                 <h2 class="font-serif text-5xl text-gray-600 mb-4 text-center md:self-start md:text-left">Добро пожаловать в сладкий мир кондитерской Шари!</h2>
-                <p class="mt-2 text-gray-600 tracking-wide text-center md:self-start md:text-left">Забудьте о суете и окунитесь в атмосферу изысканных вкусов и ароматов нашей уникальной кондитерской. Мы создаем потрясающие десерты, которые не только радуют глаз, но и невероятно вкусны. Предлагаем вам попробовать самые лучшие торты, пирожные и шоколадные изделия, приготовленные с любовью и мастерством.Приходите к нам и окунитесь в мир сладостей, где каждое лакомство - это произведение искусства. Ваше воображение будет поражено разнообразием ассортимента и качеством наших изделий. Зовите своих друзей и близких, чтобы вместе насладиться незабываемыми впечатлениями.</p>
+                <p class="hidden md:block mt-2 text-gray-600 tracking-wide text-center md:self-start md:text-left">Забудьте о суете и окунитесь в атмосферу изысканных вкусов и ароматов нашей уникальной кондитерской.Мы создаем потрясающие десерты, которые не только радуют глаз, но и невероятно вкусны. Предлагаем вам попробовать самые лучшие торты, пирожные и шоколадные изделия, приготовленные с любовью и мастерством.Приходите к нам и окунитесь в мир сладостей, где каждое лакомство - это произведение искусства. Ваше воображение будет поражено разнообразием ассортимента и качеством наших изделий. Зовите своих друзей и близких, чтобы вместе насладиться незабываемыми впечатлениями.</p>
                 <a href="/goods" class="bg-gradient-to-r from-red-600 to-pink-500 rounded-full py-4 px-8 text-gray-50 uppercase text-xl md:self-start my-5">КУПИТЬ СЕЙЧАС</a>
             </div>
             <div class="md:w-2/5 hidden md:block">
@@ -32,7 +32,7 @@
         <section class="relative pt-16 bg-blueGray-50">
             <div class="container mx-auto">
                 <div class="flex flex-wrap items-center">
-                    <div class="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-78">
+                    <div class="w-12/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-78">
                         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-gradient-to-r from-red-600 to-pink-500">
                             <img src="{{ asset('storage/other/' . "banner0.png") }}" class="w-full align-middle rounded-t-lg">
                             <blockquote class="relative p-8 mb-4">

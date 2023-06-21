@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Создание категории')
 @section('content')
     <div class="container mx-auto px-4">
         <h2 class="text-lg font-medium mb-4">Добавить категорию</h2>

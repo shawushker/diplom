@@ -1,7 +1,7 @@
 <!-- resources/views/admin/goods/edit.blade.php -->
 
 @extends('layouts.app')
-
+@section('title', 'Изменение товара')
 @section('content')
     <div class="container mx-auto mt-5">
         <h1 class="text-xl mb-5">Редактирование товара</h1>
